@@ -1,15 +1,15 @@
-import { Button } from "./components/ui/button"
+import { Route, Routes } from "react-router"
 
 function App() {
 
 
   return (
-    <>
-      <h1  className='text-2xl' >
-        Main
-      </h1>
-      <Button>Click me</Button>
-    </>
+    <Routes>
+      <Route path="/" element={<div>Home</div>} />
+      <Route path="/pokemons" element={<div>Pokemons</div>} />
+      <Route path="/favorites" element={<div>Favorites Pokemons</div>} />
+      <Route path="/pokemons/:id" element={<div>Pokemon</div>} />
+    </Routes>
   )
 }
 
