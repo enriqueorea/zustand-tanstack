@@ -1,7 +1,7 @@
 import { apiClient } from "@/core/api/client";
 import type { PokeAPIResponse } from "@/dto/pokeapi-response.dto";
 
-interface FetchPokemonsParams {
+export interface FetchPokemonsParams {
   limit?: number;
   offset?: number;
 }
