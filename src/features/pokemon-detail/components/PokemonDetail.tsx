@@ -1,6 +1,6 @@
 import type { PokeAPIPokemon } from "@/dto/pokeapi-response-pokemon.dto";
 import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -53,6 +53,7 @@ const typeColors: { [key: string]: string } = {
 };
 
 const PokemonDetail = ({ pokemon }: { pokemon: PokeAPIPokemon }) => {
+  const navigate = useNavigate();
   const { addFavoritePokemon, removeFavoritePokemon } =
     useFavoritesPokemonActions();
 
@@ -95,15 +96,14 @@ const PokemonDetail = ({ pokemon }: { pokemon: PokeAPIPokemon }) => {
       <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-2xl p-6 mb-6 shadow-lg">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link to="/">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30"
-              >
-                <ArrowLeft className="w-4 h-4" />
-              </Button>
-            </Link>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate(-1)}
+              className="bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
             <div>
               <h1 className="text-3xl font-bold text-gray-800 capitalize">
                 {pokemon.name}
