@@ -28,12 +28,16 @@ export default function HomePage() {
   ];
 
   const technologies = [
-    { name: "React 18 + TypeScript", type: "Framework" },
-    { name: "React Router v7", type: "Navegación" },
-    { name: "Tailwind CSS", type: "Estilos" },
-    { name: "Zustand + Persist", type: "Estado Global" },
-    { name: "TanStack Query", type: "Data Fetching" },
-    { name: "Axios", type: "HTTP Client" },
+    { name: "React 18 + TypeScript", type: "Framework", asset: "react.svg" },
+    { name: "React Router v7", type: "Navegación", asset: "react-router.png" },
+    { name: "Tailwind CSS", type: "Estilos", asset: "tailwind.ico" },
+    { name: "Zustand + Persist", type: "Estado Global", asset: "zustand.ico" },
+    {
+      name: "TanStack Query",
+      type: "Data Fetching",
+      asset: "react-query.ico",
+    },
+    { name: "Axios", type: "HTTP Client", asset: "axios.ico" },
   ];
 
   return (
@@ -175,6 +179,11 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {technologies.map((tech) => (
               <div key={tech.name} className="text-center">
+                <img
+                  src={`/src/assets/${tech.asset}`}
+                  alt={tech.name}
+                  className="w-16 h-16 mx-auto mb-2"
+                />
                 <Badge className="mb-2 bg-gray-200/70 text-gray-800 border-gray-300/50 hover:bg-gray-300/70 transition-colors">
                   {tech.type}
                 </Badge>
