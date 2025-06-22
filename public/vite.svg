@@ -8,7 +8,7 @@
     {/* Círculo exterior */}
     <circle cx="12" cy="12" r="10" stroke="black" strokeWidth="2" fill="none" />
 
-    {/* Parte superior - roja cuando es favorito, gris cuando no */}
+    {/* Parte superior - roja */}
     <path
       d="M 2,12 A 10,10 0 0,1 22,12 Z"
       fill="#ef4444"
